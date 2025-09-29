@@ -1,0 +1,40 @@
+# Virtual envs
+.venv/
+venv/
+ENV/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# OS / IDE
+.DS_Store
+*.swp
+.vscode/
+.idea/
+
+# Data / datasets
+/data/
+*data*/
+*.tar
+*.tar.gz
+*.zip
+
+# Model artifacts / logs / cache
+save_model/
+llm_evolution_demo_results/
+output_llm/
+output_r50/
+*.log
+
+# Torch / build cache
+*.pt
+*.pth
+*.onnx
+
+# Notebooks
+*.ipynb_checkpoints/
+
+# Temporary
+/tmp/

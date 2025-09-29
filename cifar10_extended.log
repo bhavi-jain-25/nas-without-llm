@@ -1,0 +1,241 @@
+Epoch 1 Iter 100: loss=1.8143
+Epoch 1 done in 47.5s, test acc 44.16%
+Epoch 2 Iter 100: loss=1.4300
+Epoch 2 done in 47.6s, test acc 49.21%
+Epoch 3 Iter 100: loss=1.2969
+Epoch 3 done in 48.6s, test acc 49.55%
+Epoch 4 Iter 100: loss=1.2344
+Epoch 4 done in 52.6s, test acc 52.09%
+Epoch 5 Iter 100: loss=1.1623
+Epoch 5 done in 51.1s, test acc 53.33%
+Epoch 6 Iter 100: loss=1.1250
+Epoch 6 done in 51.5s, test acc 54.76%
+Epoch 7 Iter 100: loss=1.0811
+Epoch 7 done in 50.6s, test acc 52.71%
+Epoch 8 Iter 100: loss=1.0660
+Epoch 8 done in 50.6s, test acc 58.33%
+Epoch 9 Iter 100: loss=1.0438
+Epoch 9 done in 50.9s, test acc 56.05%
+/Users/rishimehta/Desktop/NAS-concept-evolution/tools/train_cifar10_minimal.py:100: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = torch.cuda.amp.GradScaler(enabled=use_cuda_amp)
+/Users/rishimehta/Desktop/NAS-concept-evolution/.venv/lib/python3.11/site-packages/torch/utils/data/dataloader.py:684: UserWarning: 'pin_memory' argument is set as true but not supported on MPS now, then device pinned memory won't be used.
+  warnings.warn(warn_msg)
+/Users/rishimehta/Desktop/NAS-concept-evolution/tools/train_cifar10_minimal.py:166: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=use_cuda_amp):
+W0929 15:40:22.619000 75665 torch/_inductor/utils.py:1436] [0/0] Not enough SMs to use max_autotune_gemm mode
+Traceback (most recent call last):
+  File "/Users/rishimehta/Desktop/NAS-concept-evolution/tools/train_cifar10_minimal.py", line 187, in <module>
+    main()
+  File "/Users/rishimehta/Desktop/NAS-concept-evolution/tools/train_cifar10_minimal.py", line 173, in main
+    scaler.scale(loss).backward()
+  File "/Users/rishimehta/Desktop/NAS-concept-evolution/.venv/lib/python3.11/site-packages/torch/_tensor.py", line 647, in backward
+    torch.autograd.backward(
+  File "/Users/rishimehta/Desktop/NAS-concept-evolution/.venv/lib/python3.11/site-packages/torch/autograd/__init__.py", line 354, in backward
+    _engine_run_backward(
+  File "/Users/rishimehta/Desktop/NAS-concept-evolution/.venv/lib/python3.11/site-packages/torch/autograd/graph.py", line 829, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishimehta/Desktop/NAS-concept-evolution/.venv/lib/python3.11/site-packages/torch/autograd/function.py", line 311, in apply
+    return user_fn(self, *args)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishimehta/Desktop/NAS-concept-evolution/.venv/lib/python3.11/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 2259, in backward
+    return impl_fn()
+           ^^^^^^^^^
+  File "/Users/rishimehta/Desktop/NAS-concept-evolution/.venv/lib/python3.11/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 2245, in impl_fn
+    out = CompiledFunction._backward_impl(ctx, all_args)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishimehta/Desktop/NAS-concept-evolution/.venv/lib/python3.11/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py", line 2376, in _backward_impl
+    out = call_func_at_runtime_with_args(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishimehta/Desktop/NAS-concept-evolution/.venv/lib/python3.11/site-packages/torch/_functorch/_aot_autograd/utils.py", line 126, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+                            ^^^^^^^
+  File "/Users/rishimehta/Desktop/NAS-concept-evolution/.venv/lib/python3.11/site-packages/torch/_dynamo/eval_frame.py", line 929, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishimehta/Desktop/NAS-concept-evolution/.venv/lib/python3.11/site-packages/torch/_inductor/output_code.py", line 584, in __call__
+    return self.current_callable(inputs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rishimehta/Desktop/NAS-concept-evolution/.venv/lib/python3.11/site-packages/torch/_inductor/utils.py", line 2716, in run
+    out = model(new_inputs)
+          ^^^^^^^^^^^^^^^^^
+  File "/var/folders/m4/ssww8w0j7n705d9zwk1w7ck80000gn/T/torchinductor_rishimehta/jq/cjqubfpogliclqubgtn434oonqrsqgtkooby543zxm7iben5qcz2.py", line 747, in call
+    assert_size_stride(buf14, (512, 64, 16, 16), (16384, 1, 1024, 64), 'torch.ops.aten.convolution_backward.default')
+AssertionError: expected size 64==64, stride 256==1 at dim=1; expected size 16==16, stride 16==1024 at dim=2; expected size 16==16, stride 1==64 at dim=3
+Error in op: torch.ops.aten.convolution_backward.default
+This error most often comes from a incorrect fake (aka meta) kernel for a custom op.
+Use torch.library.opcheck to test your custom op.
+See https://pytorch.org/docs/stable/library.html#torch.library.opcheck
+/Users/rishimehta/Desktop/NAS-concept-evolution/tools/train_cifar10_minimal.py:100: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = torch.cuda.amp.GradScaler(enabled=use_cuda_amp)
+/Users/rishimehta/Desktop/NAS-concept-evolution/.venv/lib/python3.11/site-packages/torch/utils/data/dataloader.py:684: UserWarning: 'pin_memory' argument is set as true but not supported on MPS now, then device pinned memory won't be used.
+  warnings.warn(warn_msg)
+/Users/rishimehta/Desktop/NAS-concept-evolution/tools/train_cifar10_minimal.py:166: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=use_cuda_amp):
+/Users/rishimehta/Desktop/NAS-concept-evolution/tools/train_cifar10_minimal.py:100: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = torch.cuda.amp.GradScaler(enabled=use_cuda_amp)
+/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/multiprocessing/resource_tracker.py:224: UserWarning: resource_tracker: There appear to be 43 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/Users/rishimehta/Desktop/NAS-concept-evolution/tools/train_cifar10_minimal.py:166: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=use_cuda_amp):
+Epoch 1 Iter 100: loss=1.9415
+Epoch 1 done in 17.1s, test acc 39.06%
+Epoch 2 Iter 100: loss=1.6486
+Epoch 2 done in 6.1s, test acc 49.45%
+Epoch 3 Iter 100: loss=1.5404
+Epoch 3 done in 6.0s, test acc 49.72%
+Epoch 4 Iter 100: loss=1.4754
+Epoch 4 done in 6.2s, test acc 48.99%
+Epoch 5 Iter 100: loss=1.4222
+Epoch 5 done in 6.1s, test acc 53.21%
+Epoch 6 Iter 100: loss=1.4291
+Epoch 6 done in 6.3s, test acc 53.24%
+Epoch 7 Iter 100: loss=1.4158
+Epoch 7 done in 6.3s, test acc 45.42%
+Epoch 8 Iter 100: loss=1.4033
+Epoch 8 done in 6.5s, test acc 54.26%
+Epoch 9 Iter 100: loss=1.3636
+Epoch 9 done in 6.3s, test acc 45.94%
+Epoch 10 Iter 100: loss=1.3865
+Epoch 10 done in 6.0s, test acc 56.17%
+Epoch 11 Iter 100: loss=1.3689
+Epoch 11 done in 6.2s, test acc 55.77%
+Epoch 12 Iter 100: loss=1.3701
+Epoch 12 done in 6.2s, test acc 52.87%
+Epoch 13 Iter 100: loss=1.3469
+Epoch 13 done in 6.3s, test acc 54.34%
+Epoch 14 Iter 100: loss=1.2819
+Epoch 14 done in 6.5s, test acc 57.69%
+Epoch 15 Iter 100: loss=1.3490
+Epoch 15 done in 6.5s, test acc 57.77%
+Epoch 16 Iter 100: loss=1.3000
+Epoch 16 done in 6.3s, test acc 51.25%
+Epoch 17 Iter 100: loss=1.2933
+Epoch 17 done in 6.1s, test acc 56.12%
+Epoch 18 Iter 100: loss=1.2806
+Epoch 18 done in 6.0s, test acc 55.56%
+Epoch 19 Iter 100: loss=1.3350
+Epoch 19 done in 6.4s, test acc 60.03%
+Epoch 20 Iter 100: loss=1.2583
+Epoch 20 done in 6.2s, test acc 59.59%
+Epoch 21 Iter 100: loss=1.2847
+Epoch 21 done in 6.1s, test acc 58.30%
+Epoch 22 Iter 100: loss=1.2413
+Epoch 22 done in 6.0s, test acc 57.26%
+Epoch 23 Iter 100: loss=1.2572
+Epoch 23 done in 6.0s, test acc 60.96%
+Epoch 24 Iter 100: loss=1.3051
+Epoch 24 done in 6.2s, test acc 54.18%
+Epoch 25 Iter 100: loss=1.2213
+Epoch 25 done in 6.0s, test acc 52.09%
+Epoch 26 Iter 100: loss=1.3111
+Epoch 26 done in 6.1s, test acc 59.87%
+Epoch 27 Iter 100: loss=1.1911
+Epoch 27 done in 6.0s, test acc 59.64%
+Epoch 28 Iter 100: loss=1.2739
+Epoch 28 done in 6.3s, test acc 55.70%
+Epoch 29 Iter 100: loss=1.2259
+Epoch 29 done in 6.2s, test acc 52.31%
+Epoch 30 Iter 100: loss=1.2138
+Epoch 30 done in 6.4s, test acc 51.55%
+Epoch 31 Iter 100: loss=1.2233
+Epoch 31 done in 6.4s, test acc 50.11%
+Epoch 32 Iter 100: loss=1.1639
+Epoch 32 done in 6.3s, test acc 54.28%
+Epoch 33 Iter 100: loss=1.1762
+Epoch 33 done in 6.3s, test acc 60.01%
+Epoch 34 Iter 100: loss=1.2408
+Epoch 34 done in 6.2s, test acc 60.97%
+Epoch 35 Iter 100: loss=1.2257
+Epoch 35 done in 6.5s, test acc 61.73%
+Epoch 36 Iter 100: loss=1.2085
+Epoch 36 done in 6.4s, test acc 58.84%
+Epoch 37 Iter 100: loss=1.1757
+Epoch 37 done in 6.3s, test acc 67.16%
+Epoch 38 Iter 100: loss=1.2040
+Epoch 38 done in 6.2s, test acc 62.41%
+Epoch 39 Iter 100: loss=1.1624
+Epoch 39 done in 6.2s, test acc 65.81%
+Epoch 40 Iter 100: loss=1.1695
+Epoch 40 done in 6.2s, test acc 57.52%
+Epoch 41 Iter 100: loss=1.1665
+Epoch 41 done in 6.1s, test acc 65.49%
+Epoch 42 Iter 100: loss=1.1589
+Epoch 42 done in 6.3s, test acc 66.78%
+Epoch 43 Iter 100: loss=1.1965
+Epoch 43 done in 6.5s, test acc 65.20%
+Epoch 44 Iter 100: loss=1.1509
+Epoch 44 done in 6.3s, test acc 58.20%
+Epoch 45 Iter 100: loss=1.2081
+Epoch 45 done in 6.3s, test acc 66.51%
+Epoch 46 Iter 100: loss=1.1086
+Epoch 46 done in 6.3s, test acc 60.43%
+Epoch 47 Iter 100: loss=1.1637
+Epoch 47 done in 6.3s, test acc 62.73%
+Epoch 48 Iter 100: loss=1.2531
+Epoch 48 done in 6.3s, test acc 60.22%
+Epoch 49 Iter 100: loss=1.1867
+Epoch 49 done in 6.4s, test acc 56.30%
+Epoch 50 Iter 100: loss=1.1181
+Epoch 50 done in 6.1s, test acc 65.63%
+Epoch 51 Iter 100: loss=1.1342
+Epoch 51 done in 6.5s, test acc 62.86%
+Epoch 52 Iter 100: loss=1.1649
+Epoch 52 done in 6.1s, test acc 68.72%
+Epoch 53 Iter 100: loss=1.1096
+Epoch 53 done in 6.0s, test acc 67.98%
+Epoch 54 Iter 100: loss=1.1346
+Epoch 54 done in 6.1s, test acc 66.43%
+Epoch 55 Iter 100: loss=1.1043
+Epoch 55 done in 6.1s, test acc 60.78%
+Epoch 56 Iter 100: loss=1.0857
+Epoch 56 done in 6.0s, test acc 66.91%
+Epoch 57 Iter 100: loss=1.1151
+Epoch 57 done in 6.0s, test acc 71.24%
+Epoch 58 Iter 100: loss=1.1244
+Epoch 58 done in 6.0s, test acc 68.81%
+Epoch 59 Iter 100: loss=1.0765
+Epoch 59 done in 6.0s, test acc 67.65%
+Epoch 60 Iter 100: loss=1.0397
+Epoch 60 done in 6.1s, test acc 71.47%
+Epoch 61 Iter 100: loss=1.1025
+Epoch 61 done in 6.1s, test acc 69.06%
+Epoch 62 Iter 100: loss=1.1514
+Epoch 62 done in 6.0s, test acc 72.41%
+Epoch 63 Iter 100: loss=1.0117
+Epoch 63 done in 6.1s, test acc 64.85%
+Epoch 64 Iter 100: loss=1.0529
+Epoch 64 done in 6.2s, test acc 71.90%
+Epoch 65 Iter 100: loss=1.1624
+Epoch 65 done in 6.0s, test acc 69.84%
+Epoch 66 Iter 100: loss=1.0637
+Epoch 66 done in 6.0s, test acc 72.07%
+Epoch 67 Iter 100: loss=1.0389
+Epoch 67 done in 6.0s, test acc 73.55%
+Epoch 68 Iter 100: loss=1.0219
+Epoch 68 done in 6.0s, test acc 73.01%
+Epoch 69 Iter 100: loss=1.0263
+Epoch 69 done in 6.1s, test acc 72.81%
+Epoch 70 Iter 100: loss=1.0806
+Epoch 70 done in 6.1s, test acc 73.81%
+Epoch 71 Iter 100: loss=1.0241
+Epoch 71 done in 6.0s, test acc 74.75%
+Epoch 72 Iter 100: loss=1.0288
+Epoch 72 done in 6.0s, test acc 74.78%
+Epoch 73 Iter 100: loss=1.0362
+Epoch 73 done in 6.1s, test acc 74.96%
+Epoch 74 Iter 100: loss=1.0008
+Epoch 74 done in 6.1s, test acc 75.03%
+Epoch 75 Iter 100: loss=1.0165
+Epoch 75 done in 6.1s, test acc 75.03%
+Epoch 76 Iter 100: loss=1.0771
+Epoch 76 done in 6.0s, test acc 75.35%
+Epoch 77 Iter 100: loss=0.9952
+Epoch 77 done in 6.1s, test acc 76.35%
+Epoch 78 Iter 100: loss=1.0074
+Epoch 78 done in 6.3s, test acc 75.85%
+Epoch 79 Iter 100: loss=0.9454
+Epoch 79 done in 6.1s, test acc 76.19%
+Epoch 80 Iter 100: loss=0.9829
+Epoch 80 done in 6.0s, test acc 76.73%
+FINAL 2025-09-29 16:28:55 — CIFAR10 Test Accuracy: 76.73%
