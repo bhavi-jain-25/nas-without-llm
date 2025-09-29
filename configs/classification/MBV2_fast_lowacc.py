@@ -2,33 +2,38 @@
 # The implementation is also open-sourced by the authors, and available at
 # https://github.com/alibaba/lightweight-neural-architecture-search.
 
-work_dir = './save_model/mbv2_ultra_lowacc/'
+work_dir = './save_model/mbv2_fast_lowacc/'
 log_level = 'INFO'  # INFO/DEBUG/ERROR
 log_freq = 1000
 
 """ image config """
-# Use very small resolution for extremely low accuracy
-image_size = 64  # Much smaller for very low accuracy
+# Use smaller resolution to trade accuracy for speed
+image_size = 160  # 224 for Imagenet, 480 for detection, 160 for mcu
 
-""" Model config - ULTRA DEGRADED for <40% accuracy """
+""" Model config """
 model = dict(
     type = 'CnnNet',
     structure_info =[\
-        {'class': 'ConvKXBNRELU', 'in': 3, 'out': 2, 's': 8, 'k': 1}, \
-        {'class': 'ConvKXBNRELU', 'in': 2, 'out': 4, 's': 1, 'k': 1}, \
+        {'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, \
+        {'class': 'SuperResK1DWK1', 'in': 16, 'out': 24, 's': 2, 'k': 3, 'L': 1, 'btn': 48}, \
+        {'class': 'SuperResK1DWK1', 'in': 24, 'out': 48, 's': 2, 'k': 3, 'L': 1, 'btn': 96}, \
+        {'class': 'SuperResK1DWK1', 'in': 48, 'out': 64, 's': 2, 'k': 3, 'L': 1, 'btn': 128}, \
+        {'class': 'SuperResK1DWK1', 'in': 64, 'out': 96, 's': 1, 'k': 3, 'L': 1, 'btn': 192}, \
+        {'class': 'SuperResK1DWK1', 'in': 96, 'out': 192, 's': 2, 'k': 3, 'L': 1, 'btn': 384}, \
+        {'class': 'ConvKXBNRELU', 'in': 192, 'out': 1280, 's': 1, 'k': 1}, \
      ]
 )
 
 """ Budget config """
-# Very tight budgets for extremely low accuracy
+# Lower FLOPs and layers budgets to constrain the search to smaller nets
 budgets = [
-    dict(type = "flops", budget = 1e6),   # EXTREMELY small
-    dict(type = "layers",budget = 3),     # MINIMAL layers
+    dict(type = "flops", budget = 150e6),
+    dict(type = "layers",budget = 40),
 ]
 
 """ Score config """
-# Use simple random scorer for ultra-low accuracy (no LLM involved)
-score = dict(type = 'random')
+# Use MADNAS zero-shot score (no LLM involved)
+score = dict(type = 'madnas', multi_block_ratio = [0,0,0,0,1])
 
 """ Space config """
 space = dict(
@@ -37,12 +42,12 @@ space = dict(
 )
 
 """ Search config """
-# Minimal search for very low accuracy
+# Reduce population and total samples for faster, lower-accuracy search
 search = dict(
     minor_mutation = False,
     minor_iter = 100000,
-    popu_size = 8,         # MINIMAL population
-    num_random_nets = 20,  # VERY few iterations
+    popu_size = 64,
+    num_random_nets = 2000,
     sync_size_ratio = 1.0,
     num_network = 1,
 ) 
