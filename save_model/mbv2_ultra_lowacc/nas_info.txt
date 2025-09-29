@@ -1,0 +1,6 @@
+[ { 'acc': np.float64(28.013667014060438),
+    'flops': 3328.0,
+    'layers': 2,
+    'score': np.float64(28.013667014060438),
+    'structure': [ {'class': 'ConvKXBNRELU', 'in': 3, 'k': 1, 'out': 4, 's': 8},
+                   {'class': 'ConvKXBNRELU', 'in': 4, 'k': 1, 'out': 4, 's': 1}]}]

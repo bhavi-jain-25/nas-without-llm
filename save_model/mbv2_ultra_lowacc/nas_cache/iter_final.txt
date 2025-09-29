@@ -1,0 +1,9 @@
+{ 'num_evaluated_nets_count': 20,
+  'popu_acc_list': [np.float64(28.013667014060438), np.float64(25.900849171547357)],
+  'popu_flops_list': [3328.0, 2048.0],
+  'popu_layers_list': [2, 2],
+  'popu_score_list': [np.float64(28.013667014060438), np.float64(25.900849171547357)],
+  'popu_structure_list': [ [ {'class': 'ConvKXBNRELU', 'in': 3, 'k': 1, 'out': 4, 's': 8},
+                             {'class': 'ConvKXBNRELU', 'in': 4, 'k': 1, 'out': 4, 's': 1}],
+                           [ {'class': 'ConvKXBNRELU', 'in': 3, 'k': 1, 'out': 2, 's': 8},
+                             {'class': 'ConvKXBNRELU', 'in': 2, 'k': 1, 'out': 4, 's': 1}]]}

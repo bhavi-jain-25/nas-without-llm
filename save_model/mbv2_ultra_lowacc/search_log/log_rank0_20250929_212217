@@ -1,0 +1,1415 @@
+2025-09-29 21:22:17,788-TinyNAS-INFO-rank0: Environment info:
+Config (path: configs\classification\MBV2_fast_lowacc.py): {'work_dir': './save_model/mbv2_ultra_lowacc/', 'log_level': 'INFO', 'log_freq': 1000, 'image_size': 64, 'model': {'type': 'CnnNet', 'structure_info': [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 16}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]}, 'budgets': [{'type': 'flops', 'budget': 5000000.0}, {'type': 'layers', 'budget': 5}], 'score': {'type': 'madnas', 'multi_block_ratio': [0, 0, 0, 0, 1]}, 'space': {'type': 'space_k1dwk1', 'image_size': 64}, 'search': {'minor_mutation': False, 'minor_iter': 100000, 'popu_size': 16, 'num_random_nets': 100, 'sync_size_ratio': 1.0, 'num_network': 1}, 'rank': 0, 'world_size': 1, 'gpu': None}
+
+2025-09-29 21:22:17,792-TinyNAS-INFO-rank0: begin to build the super model and population
+2025-09-29 21:22:17,792-TinyNAS-INFO-rank0: ****** Build the mutation space: space_k1dwk1 ******
+2025-09-29 21:22:17,799-TinyNAS-INFO-rank0: ****** Build the super_model:CnnNet ******
+2025-09-29 21:22:17,799-TinyNAS-INFO-rank0: ****** Build the score: madnas ******
+2025-09-29 21:22:17,799-TinyNAS-INFO-rank0: ****** Successfully build the NAS Strategy ******
+2025-09-29 21:22:17,799-TinyNAS-INFO-rank0: ****** Successfully build the Population ******
+2025-09-29 21:22:17,799-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,799-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,801-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,801-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 16, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,801-TinyNAS-INFO-rank0: init: {'structure_info': [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 16, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}], 'flops': 708608.0, 'layers': 5, 'is_satify_budget': True, 'score': -9999}
+2025-09-29 21:22:17,801-TinyNAS-INFO-rank0: sync_interval=16
+2025-09-29 21:22:17,803-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,803-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,803-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,803-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 16, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,807-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,807-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,807-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,807-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 16, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,815-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,815-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,815-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,815-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 80, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,819-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,819-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,819-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,819-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 24, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,822-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,822-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,823-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,823-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 80, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,823-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,823-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,828-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,828-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 24, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,828-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,828-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,828-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,828-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 24, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,828-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,828-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,828-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,828-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 16, 's': 2, 'k': 5, 'L': 1, 'btn': 24, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,837-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,837-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,837-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,837-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 96, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,844-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,844-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,844-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,846-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 24, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,846-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,846-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,846-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,846-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 24, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,852-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,852-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,852-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,852-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 8, 's': 2, 'k': 5, 'L': 1, 'btn': 16, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 8, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,855-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,855-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,855-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,855-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 16, 's': 2, 'k': 5, 'L': 1, 'btn': 24, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,861-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,861-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,861-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,861-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 40, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,861-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,861-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,861-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,861-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 40, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,870-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,870-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,871-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,871-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 24, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,871-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,871-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,871-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,871-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 32, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,877-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,877-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,877-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,877-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 56, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,877-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,877-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,877-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,877-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 24, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,886-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,886-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,886-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,886-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 16, 's': 2, 'k': 5, 'L': 1, 'btn': 16, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,886-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,886-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,886-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,886-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 80, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,891-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,891-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,894-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,894-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 96, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,894-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,894-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,894-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,894-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 24, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,904-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,904-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,904-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,904-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 16, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,907-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,907-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,907-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,907-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 8, 's': 2, 'k': 5, 'L': 1, 'btn': 16, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 8, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,910-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,910-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,910-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,910-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 16, 's': 2, 'k': 5, 'L': 1, 'btn': 40, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,910-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,910-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,910-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,910-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 80, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,919-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,919-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,919-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,919-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 16, 's': 2, 'k': 5, 'L': 1, 'btn': 24, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,919-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,919-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,919-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,919-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 40, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,927-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,927-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,927-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,927-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 8, 's': 2, 'k': 3, 'L': 1, 'btn': 16, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 8, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,931-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,931-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,931-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,931-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 64, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,935-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,935-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,935-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,935-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 16, 's': 2, 'k': 5, 'L': 1, 'btn': 24, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,935-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,935-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,935-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,935-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 80, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,941-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,941-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,941-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,941-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 64, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,944-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,944-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,944-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,944-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 8, 's': 2, 'k': 5, 'L': 1, 'btn': 16, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 8, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,944-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,944-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,944-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,944-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 24, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,952-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,952-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,952-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,952-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 8, 's': 2, 'k': 3, 'L': 1, 'btn': 32, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 8, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,952-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,952-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,952-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,952-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 32, 's': 2, 'k': 3, 'L': 1, 'btn': 80, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 32, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,960-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,960-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,961-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,961-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 40, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,963-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,963-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,963-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,963-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 80, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,969-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,969-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,969-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,969-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 64, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,969-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,969-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,969-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,969-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 96, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,969-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,977-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,977-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,977-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 24, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,977-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,977-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,977-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,977-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 40, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,985-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,985-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,985-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,985-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 16, 's': 2, 'k': 5, 'L': 1, 'btn': 40, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,985-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,985-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,985-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,985-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 16, 's': 2, 'k': 5, 'L': 1, 'btn': 40, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,990-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,990-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,990-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,990-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 40, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:17,993-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:17,993-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:17,993-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:17,993-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 16, 's': 2, 'k': 5, 'L': 1, 'btn': 48, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,000-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,000-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,000-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,000-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 24, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,002-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,002-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,002-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,002-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 56, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,002-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,002-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,002-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,002-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 16, 's': 2, 'k': 5, 'L': 1, 'btn': 24, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,002-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,002-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,010-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,010-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 40, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,010-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,010-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,010-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,010-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 24, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,018-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,018-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,018-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,018-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 80, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,018-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,018-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,018-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,018-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 80, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,018-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,018-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,018-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,018-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 16, 's': 2, 'k': 5, 'L': 1, 'btn': 24, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,026-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,026-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,026-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,026-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 16, 's': 2, 'k': 5, 'L': 1, 'btn': 48, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,026-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,026-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,026-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,026-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 56, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,035-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,035-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,035-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,035-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 48, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,035-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,035-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,035-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,035-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 24, 's': 2, 'k': 3, 'L': 1, 'btn': 144, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 24, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,035-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,035-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,035-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,035-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 96, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,045-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,045-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,045-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,045-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 24, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,049-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,049-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,051-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,051-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 16, 's': 2, 'k': 5, 'L': 1, 'btn': 40, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,053-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,053-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,053-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,053-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 40, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,056-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,056-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,056-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,056-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 16, 's': 2, 'k': 5, 'L': 1, 'btn': 56, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,059-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,059-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,059-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,059-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 48, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,059-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,059-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,059-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,059-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 24, 's': 2, 'k': 3, 'L': 1, 'btn': 64, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 24, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,068-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,068-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,068-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,068-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 80, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,072-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,072-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,072-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,072-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 32, 's': 2, 'k': 3, 'L': 1, 'btn': 80, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 32, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,074-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,074-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,074-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,074-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 32, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,080-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,080-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,080-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,080-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 40, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,084-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,084-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,084-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,084-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 16, 's': 2, 'k': 5, 'L': 1, 'btn': 48, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,086-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,086-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,086-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,088-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 16, 's': 2, 'k': 5, 'L': 1, 'btn': 32, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,090-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,090-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,090-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,090-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 40, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,095-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,095-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,095-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,095-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 16, 's': 2, 'k': 5, 'L': 1, 'btn': 96, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,102-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,102-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,102-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,102-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 16, 's': 2, 'k': 5, 'L': 1, 'btn': 96, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,104-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,106-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,106-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,106-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 80, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,108-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,108-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,108-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,108-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 40, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,117-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,117-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,117-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,117-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 40, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,119-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,119-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,119-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,119-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 40, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,123-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,123-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,123-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,123-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 24, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 24, 'out': 24, 's': 2, 'k': 3, 'L': 1, 'btn': 48, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 24, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,127-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,127-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,127-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,127-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 80, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,133-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,133-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,133-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,133-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 16, 's': 2, 'k': 5, 'L': 1, 'btn': 96, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,133-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,133-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,133-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,133-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 24, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,140-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,140-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,140-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,140-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 16, 's': 2, 'k': 5, 'L': 1, 'btn': 40, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,143-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,143-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,145-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,146-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 96, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,150-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,150-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,150-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,150-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 16, 's': 2, 'k': 5, 'L': 1, 'btn': 32, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,152-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,152-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,152-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,152-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 16, 's': 2, 'k': 5, 'L': 1, 'btn': 24, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,156-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,156-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,156-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,156-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 24, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,162-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,162-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,164-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,164-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 16, 's': 2, 'k': 3, 'L': 1, 'btn': 24, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,166-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,166-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,166-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,166-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 16, 's': 2, 'k': 5, 'L': 1, 'btn': 32, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,170-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,170-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,170-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,170-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 16, 's': 2, 'k': 5, 'L': 1, 'btn': 40, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,172-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,172-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,172-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,172-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 8, 's': 2, 'k': 3, 'L': 1, 'btn': 40, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 8, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,178-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,178-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,178-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,178-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 16, 's': 2, 'k': 5, 'L': 1, 'btn': 32, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,182-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,182-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,182-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,182-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 8, 's': 2, 'k': 3, 'L': 1, 'btn': 40, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 8, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,184-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,184-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,184-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,184-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 16, 's': 2, 'k': 5, 'L': 1, 'btn': 24, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,188-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,188-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,188-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,188-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 16, 's': 2, 'k': 5, 'L': 1, 'btn': 80, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,196-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,196-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,198-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,198-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 16, 's': 2, 'k': 5, 'L': 1, 'btn': 24, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,200-TinyNAS-ERROR-rank0: error in compute_score
+2025-09-29 21:22:18,200-TinyNAS-ERROR-rank0: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+Traceback (most recent call last):
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\strategy\strategy.py", line 96, in do_compute_nas_score
+    nas_score_info = self.compute_score(model)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 76, in __call__
+    nas_score_once = self.ratio_score(len(self.stage_idx), block_std_list)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\users\kapoo\onedrive\desktop\sgsfdj\nas-concept-evolution\tinynas\scores\compute_madnas.py", line 32, in ratio_score
+    raise ValueError(
+ValueError: the length of the stage_features_list (2) must be equal to the length of ratio_coef (5)
+2025-09-29 21:22:18,200-TinyNAS-ERROR-rank0: Failed structure: 
+2025-09-29 21:22:18,200-TinyNAS-ERROR-rank0: [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 8, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 8, 'out': 16, 's': 2, 'k': 5, 'L': 1, 'btn': 80, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 16, 'out': 32, 's': 1, 'k': 1}]
+2025-09-29 21:22:18,200-TinyNAS-INFO-rank0: search md5 str 71d9bd3d183592a12f5f4413803f9128
+2025-09-29 21:22:18,200-TinyNAS-INFO-rank0: exporting generation: ./save_model/mbv2_ultra_lowacc/nas_cache/iter_final.txt
+2025-09-29 21:22:18,207-TinyNAS-INFO-rank0: exporting best_structure: ./save_model/mbv2_ultra_lowacc/best_structure.txt
+2025-09-29 21:22:18,214-TinyNAS-INFO-rank0: exporting nas_info: ./save_model/mbv2_ultra_lowacc/nas_info.txt

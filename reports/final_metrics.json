@@ -1,0 +1,11 @@
+{
+  "cifar": {
+    "best_test_acc_percent": 76.73,
+    "final_line": "FINAL 2025-09-29 16:28:55 \u2014 CIFAR10 Test Accuracy: 76.73%"
+  },
+  "nas": {},
+  "nas_cache": {
+    "latest_cache": "/Users/rishimehta/Desktop/NAS-concept-evolution/save_model/R50_R224_FLOPs41e8/nas_cache/iter94500.txt",
+    "best_line": null
+  }
+}

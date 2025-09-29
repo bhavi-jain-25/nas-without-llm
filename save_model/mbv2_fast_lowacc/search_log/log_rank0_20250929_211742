@@ -1,0 +1,24 @@
+2025-09-29 21:17:42,814-TinyNAS-INFO-rank0: Environment info:
+Config (path: configs\classification\MBV2_fast_lowacc.py): {'work_dir': './save_model/mbv2_fast_lowacc/', 'log_level': 'INFO', 'log_freq': 1000, 'image_size': 160, 'model': {'type': 'CnnNet', 'structure_info': [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 24, 's': 2, 'k': 3, 'L': 1, 'btn': 48}, {'class': 'SuperResK1DWK1', 'in': 24, 'out': 48, 's': 2, 'k': 3, 'L': 1, 'btn': 96}, {'class': 'SuperResK1DWK1', 'in': 48, 'out': 64, 's': 2, 'k': 3, 'L': 1, 'btn': 128}, {'class': 'SuperResK1DWK1', 'in': 64, 'out': 96, 's': 1, 'k': 3, 'L': 1, 'btn': 192}, {'class': 'SuperResK1DWK1', 'in': 96, 'out': 192, 's': 2, 'k': 3, 'L': 1, 'btn': 384}, {'class': 'ConvKXBNRELU', 'in': 192, 'out': 1280, 's': 1, 'k': 1}]}, 'budgets': [{'type': 'flops', 'budget': 150000000.0}, {'type': 'layers', 'budget': 40}], 'score': {'type': 'madnas', 'multi_block_ratio': [0, 0, 0, 0, 1]}, 'space': {'type': 'space_k1dwk1', 'image_size': 160}, 'search': {'minor_mutation': False, 'minor_iter': 100000, 'popu_size': 64, 'num_random_nets': 2000, 'sync_size_ratio': 1.0, 'num_network': 1}, 'rank': 0, 'world_size': 1, 'gpu': None}
+
+2025-09-29 21:17:42,814-TinyNAS-INFO-rank0: begin to build the super model and population
+2025-09-29 21:17:42,814-TinyNAS-INFO-rank0: ****** Build the mutation space: space_k1dwk1 ******
+2025-09-29 21:17:42,830-TinyNAS-INFO-rank0: ****** Build the super_model:CnnNet ******
+2025-09-29 21:17:42,830-TinyNAS-INFO-rank0: ****** Build the score: madnas ******
+2025-09-29 21:17:42,830-TinyNAS-INFO-rank0: ****** Successfully build the NAS Strategy ******
+2025-09-29 21:17:42,830-TinyNAS-INFO-rank0: ****** Successfully build the Population ******
+2025-09-29 21:17:42,830-TinyNAS-INFO-rank0: init: {'structure_info': [{'class': 'ConvKXBNRELU', 'in': 3, 'out': 16, 's': 2, 'k': 3}, {'class': 'SuperResK1DWK1', 'in': 16, 'out': 24, 's': 2, 'k': 3, 'L': 1, 'btn': 48, 'inner_class': 'ResK1DWK1'}, {'class': 'SuperResK1DWK1', 'in': 24, 'out': 48, 's': 2, 'k': 3, 'L': 1, 'btn': 96, 'inner_class': 'ResK1DWK1'}, {'class': 'SuperResK1DWK1', 'in': 48, 'out': 64, 's': 2, 'k': 3, 'L': 1, 'btn': 128, 'inner_class': 'ResK1DWK1'}, {'class': 'SuperResK1DWK1', 'in': 64, 'out': 96, 's': 1, 'k': 3, 'L': 1, 'btn': 192, 'inner_class': 'ResK1DWK1'}, {'class': 'SuperResK1DWK1', 'in': 96, 'out': 192, 's': 2, 'k': 3, 'L': 1, 'btn': 384, 'inner_class': 'ResK1DWK1'}, {'class': 'ConvKXBNRELU', 'in': 192, 'out': 1280, 's': 1, 'k': 1}], 'flops': 37304000.0, 'layers': 17, 'is_satify_budget': True, 'score': np.float64(38.44473903388726)}
+2025-09-29 21:17:42,830-TinyNAS-INFO-rank0: sync_interval=64
+2025-09-29 21:17:52,973-TinyNAS-INFO-rank0: exporting generation: ./save_model/mbv2_fast_lowacc/nas_cache/iter504.txt
+2025-09-29 21:17:53,031-TinyNAS-INFO-rank0: num_evaluated=504, elasp_time=0.00283115h, remain_time=0.008403582921943141h
+2025-09-29 21:17:53,031-TinyNAS-INFO-rank0: ---best_individual: {'acc': np.float64(87.83736933905492), 'score': np.float64(87.83736933905492), 'flops': '89.92%, 134.88M/150.00M', 'layers': '95.00%, 38/40'}
+2025-09-29 21:18:07,270-TinyNAS-INFO-rank0: exporting generation: ./save_model/mbv2_fast_lowacc/nas_cache/iter1008.txt
+2025-09-29 21:18:07,315-TinyNAS-INFO-rank0: num_evaluated=1008, elasp_time=0.00680128h, remain_time=0.0066933262200996445h
+2025-09-29 21:18:07,315-TinyNAS-INFO-rank0: ---best_individual: {'acc': np.float64(90.34901254487987), 'score': np.float64(90.34901254487987), 'flops': '97.50%, 146.25M/150.00M', 'layers': '95.00%, 38/40'}
+2025-09-29 21:18:20,345-TinyNAS-INFO-rank0: exporting generation: ./save_model/mbv2_fast_lowacc/nas_cache/iter1512.txt
+2025-09-29 21:18:20,403-TinyNAS-INFO-rank0: num_evaluated=1512, elasp_time=0.0104354h, remain_time=0.003368027955906649h
+2025-09-29 21:18:20,403-TinyNAS-INFO-rank0: ---best_individual: {'acc': np.float64(91.54044853042973), 'score': np.float64(91.54044853042973), 'flops': '99.11%, 148.67M/150.00M', 'layers': '95.00%, 38/40'}
+2025-09-29 21:18:33,201-TinyNAS-INFO-rank0: search md5 str adfd9914dc0446bb0762e8128b41051f
+2025-09-29 21:18:33,210-TinyNAS-INFO-rank0: exporting generation: ./save_model/mbv2_fast_lowacc/nas_cache/iter_final.txt
+2025-09-29 21:18:33,309-TinyNAS-INFO-rank0: exporting best_structure: ./save_model/mbv2_fast_lowacc/best_structure.txt
+2025-09-29 21:18:33,309-TinyNAS-INFO-rank0: exporting nas_info: ./save_model/mbv2_fast_lowacc/nas_info.txt

@@ -1,0 +1,3 @@
+{ 'best_structures': [ [ {'class': 'ConvKXBNRELU', 'in': 3, 'k': 1, 'out': 4, 's': 8},
+                         {'class': 'ConvKXBNRELU', 'in': 4, 'k': 1, 'out': 4, 's': 1}]],
+  'space_arch': 'CnnNet'}
